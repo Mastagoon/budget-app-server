@@ -19,4 +19,12 @@ export default class ExampleResolver {
         const result = await repo.create(example)
         return result
     }
+
+    @Query(() => [ExampleEntity])
+    async getAllExamples(
+        @Ctx() { orm }: ApolloContext
+    ): Promise<ExampleEntity[]> {
+        const repo = new ExampleRepository(orm)
+        return await repo.getAll()
+    }
 }

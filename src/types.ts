@@ -27,10 +27,10 @@ export class ExampleInput implements Partial<ExampleEntity> {
     name!: string
 }
 
-@InputType()
-export class EntityEnpity implements Partial<T> {
+// @InputType()
+// export class EntityEnpity implements Partial<T> {
     
-}
+// }
 
 // export const getInputType = () => {
 
