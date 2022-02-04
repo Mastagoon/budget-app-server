@@ -1,6 +1,6 @@
 import { Connection, DeepPartial, DeleteResult, Repository } from "typeorm"
 
-export default class BaseRepository<T> {
+export default class BasicRepository<T> {
     protected dbConnection: Connection
     protected repository: Repository<T>
 

@@ -1,6 +1,6 @@
 import { Field, ObjectType } from "type-graphql"
 import { Column, Entity } from "typeorm"
-import { Currencies } from "../types"
+import { Currencies } from "../types/enums"
 import BasicEntity from "./BasicEntity"
 
 

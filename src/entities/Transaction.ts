@@ -1,6 +1,6 @@
 import { Field, Float, ObjectType } from "type-graphql"
 import { Column, Entity, ManyToOne } from "typeorm"
-import { TransactionTypes } from "../types"
+import { TransactionTypes } from "../types/enums"
 import BasicEntity from "./BasicEntity"
 import Category from "./Category"
 import Wallet from "./Wallet"

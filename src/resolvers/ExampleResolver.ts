@@ -1,7 +1,7 @@
 import { Arg, Ctx, Int, Mutation, Query, Resolver } from "type-graphql"
 import ExampleEntity from "../entities/ExampleEntity"
 import ExampleRepository from "../repositories/ExampleRepo"
-import { ApolloContext, ExampleInput } from "../types"
+import { ApolloContext, ExampleInput } from "../types/types"
 
 @Resolver()
 export default class ExampleResolver {
