@@ -24,11 +24,20 @@ export default class Transaction extends BasicEntity {
     @ManyToOne(() => Category)
     category!: Category
 
+    @Column("int")
+    categoryId!: number
+
+    @Column("int")
+    transactionWalletId!: number
+
+    @Column("int", { nullable: true })
+    secondaryWalletId?: number
+
     @Field(() => Wallet)
     @ManyToOne(() => Wallet)
-    fromWallet!: Wallet
+    transactionWallet!: Wallet
 
     @Field(() => Wallet, { nullable: true })
     @ManyToOne(() => Wallet, { nullable: true })
-    toWallet?: Wallet
+    secondaryWallet?: Wallet
 }

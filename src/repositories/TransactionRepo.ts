@@ -7,4 +7,10 @@ export default class TransactionRepository extends BasicRepository<Transaction> 
         const repo = dbConnection.getRepository(Transaction)
         super(dbConnection, repo)
     }
+
+    public async getAll(): Promise<Transaction[]> {
+        return await this.repository.find({
+            relations: ["category", "transactionWallet", "secondaryWallet"],
+        })
+    }
 }

@@ -23,7 +23,9 @@ export default class BasicRepository<T> {
     }
 
     public async create(input: DeepPartial<T>): Promise<T> {
+        console.log(input)
         const t = this.repository.create(input)
+        console.log("T: ", t)
         return await this.repository.save(t)
     }
 

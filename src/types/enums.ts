@@ -13,5 +13,11 @@ export enum Currencies {
     SAR = "SAR"
 }
 
+export enum CategoryTypes {
+    EXPENSE = 0,
+    INCOME
+}
+
+registerEnumType(CategoryTypes, { name: "CategoryTypes" })
 registerEnumType(Currencies, { name: "Currencies" })
 registerEnumType(TransactionTypes, { name: "TransactionTypes" })

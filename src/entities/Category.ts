@@ -1,5 +1,6 @@
 import { Field, ObjectType } from "type-graphql"
 import { Column, Entity } from "typeorm"
+import { CategoryTypes } from "../types/enums"
 import BasicEntity from "./BasicEntity"
 
 
@@ -10,5 +11,7 @@ export default class Category extends BasicEntity {
     @Column("varchar")
     name!: string
 
-    // icon
+    @Field(() => CategoryTypes)
+    @Column("varchar")
+    type!: CategoryTypes
 }

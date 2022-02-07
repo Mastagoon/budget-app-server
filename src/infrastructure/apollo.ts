@@ -2,6 +2,7 @@ import { ApolloServer } from "apollo-server-express"
 import { Express, Response, Request } from "express"
 import { buildSchema } from "type-graphql"
 import { Connection } from "typeorm"
+import CategoryResolver from "../resolvers/CategoryResolver"
 import ExampleResolver from "../resolvers/ExampleResolver"
 import TransactionResolver from "../resolvers/TransactionResolver"
 import WalletResolver from "../resolvers/WalletResolver"
@@ -30,7 +31,7 @@ const getContext = async (
 export const createApolloServer = async (orm: Connection, app: Express) => {
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [ExampleResolver, TransactionResolver, WalletResolver]
+            resolvers: [ExampleResolver, TransactionResolver, WalletResolver, CategoryResolver]
         }),
         // context: ({ req }) => getContext(req, orm),
         context: ({ req, res }) => getContext(req, orm, res)
